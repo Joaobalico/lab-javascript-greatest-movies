@@ -22,10 +22,11 @@ function howManyMovies(movies) {
 
 function scoresAverage(movies) {
   let avg = movies.reduce(function (acc, value) {
-    if (typeof value.score === NaN) {
-      value.score = 0
+    if (typeof value.score === 'number') {
+      return acc + value.score;
+    } else {
+      return acc;
     }
-    return acc + value.score;
   }, 0)
   if (movies.length === 0) {
     return 0 ;
@@ -33,8 +34,6 @@ function scoresAverage(movies) {
   return Number((avg / movies.length).toFixed(2));
 }
 
-
-console.log(scoresAverage(movies))
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
