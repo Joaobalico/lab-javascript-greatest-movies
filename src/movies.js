@@ -73,7 +73,29 @@ function orderByYear(movies) {
 }
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-function orderAlphabetically() {}
+
+function orderAlphabetically(movies) {
+  const abcOrder = [...movies].sort(function (acc, value) {
+    for (let i = 0; i <= 20; i++) {
+      if (movies.length < 20) {
+        return movies[i].title;
+      }
+      return movies[i].title;
+    } if (movies.length > 20) {
+      return 
+    }
+    if (acc.title < value.title) {
+      return -1;
+    } else if (acc.title > value.title) {
+      return 1;
+    } else {
+      return 0;
+    }
+  })
+  return abcOrder;
+}
+
+// console.log(movies[1].title) //'The Godfather'
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes() {}
