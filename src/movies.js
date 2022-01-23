@@ -54,8 +54,22 @@ function dramaMoviesScore(array) {
  }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear() {
-  
+
+function orderByYear(movies) {
+  const sortedMov = [...movies].sort(function (acc, value) {
+    if (acc.year !== value.year) {
+      return acc.year - value.year;
+    } else if (acc.year === value.year) {
+      if (acc.title < value.title) {
+        return -1;
+      } else if (acc.title > value.title) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  })
+  return sortedMov;
 }
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
